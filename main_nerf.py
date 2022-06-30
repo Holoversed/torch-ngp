@@ -117,7 +117,7 @@ if __name__ == '__main__':
             else:
                 trainer.test(test_loader) # colmap doesn't have gt, so just test.
             
-            #trainer.save_mesh(resolution=256, threshold=10)
+            trainer.save_mesh(resolution=256, threshold=10)
     
     else:
 
@@ -148,4 +148,4 @@ if __name__ == '__main__':
             else:
                 trainer.test(test_loader) # colmap doesn't have gt, so just test.
             
-            #trainer.save_mesh(resolution=256, threshold=10)
+            trainer.save_mesh(resolution=256, threshold=10)
