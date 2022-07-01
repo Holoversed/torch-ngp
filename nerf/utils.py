@@ -491,7 +491,7 @@ class Trainer(object):
     def save_mesh(self, save_path=None, resolution=256, threshold=10):
 
         if save_path is None:
-            save_path = os.path.join(self.workspace, 'meshes', f'{self.name}_{self.epoch}.dae')
+            save_path = os.path.join(self.workspace, 'meshes', f'{self.name}_{self.epoch}.glb')
 
         self.log(f"==> Saving mesh to {save_path}")
 
@@ -506,7 +506,7 @@ class Trainer(object):
         vertices, triangles = extract_geometry(self.model.aabb_infer[:3], self.model.aabb_infer[3:], resolution=resolution, threshold=threshold, query_func=query_func)
 
         mesh = trimesh.Trimesh(vertices, triangles, process=False) # important, process=True leads to seg fault...
-        mesh.export(save_path,file_type='dae')
+        mesh.export(save_path,file_type='glb')
 
         self.log(f"==> Finished saving mesh.")
 
