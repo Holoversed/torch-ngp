@@ -85,6 +85,9 @@ We also support self-captured dataset and converting other formats (e.g., LLFF, 
 First time running will take some time to compile the CUDA extensions.
 
 ```bash
+
+python main_nerf.py ../../data/fox --workspace trial_nerf -O
+
 ### Instant-ngp NeRF
 # train with different backbones (with slower pytorch ray marching)
 # for the colmap dataset, the default dataset setting `--bound 2 --scale 0.33` is used.
